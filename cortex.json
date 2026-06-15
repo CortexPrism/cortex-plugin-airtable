@@ -162,49 +162,53 @@
       ]
     }
   ],
-  "ui": [
-    {
-      "section": "Airtable",
-      "fields": [
-        {
-          "key": "airtableApiKey",
-          "label": "API Key",
-          "type": "secret",
-          "description": "Your Airtable personal access token",
-          "required": true
-        },
-        {
-          "key": "airtableDefaultBase",
-          "label": "Default Base ID",
-          "type": "text",
-          "description": "Default Airtable base ID"
-        }
-      ]
-    },
-    {
-      "section": "Google Sheets",
-      "fields": [
-        {
-          "key": "sheetsClientEmail",
-          "label": "Client Email",
-          "type": "text",
-          "description": "GCP service account client email"
-        },
-        {
-          "key": "sheetsPrivateKey",
-          "label": "Private Key",
-          "type": "secret",
-          "description": "GCP service account private key (PEM)"
-        }
-      ]
-    }
-  ],
+  "ui": {
+    "settings": [
+      {
+        "section": "Airtable",
+        "fields": [
+          {
+            "key": "airtableApiKey",
+            "label": "API Key",
+            "type": "secret",
+            "description": "Your Airtable personal access token",
+            "required": true
+          },
+          {
+            "key": "airtableDefaultBase",
+            "label": "Default Base ID",
+            "type": "text",
+            "description": "Default Airtable base ID"
+          }
+        ]
+      },
+      {
+        "section": "Google Sheets",
+        "fields": [
+          {
+            "key": "sheetsClientEmail",
+            "label": "Client Email",
+            "type": "text",
+            "description": "GCP service account client email"
+          },
+          {
+            "key": "sheetsPrivateKey",
+            "label": "Private Key",
+            "type": "secret",
+            "description": "GCP service account private key (PEM)"
+          }
+        ]
+      }
+    ]
+  },
   "dependencies": {},
   "peerDependencies": {
     "cortex": ">=1.0.0"
   },
   "aiDisclosure": {
-    "tools": ["Claude Code (Anthropic)"],
+    "tools": [
+      "Claude Code (Anthropic)"
+    ],
     "humanReview": true
   }
 }
