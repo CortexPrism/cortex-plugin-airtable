@@ -1,0 +1,210 @@
+{
+  "name": "cortex-plugin-airtable",
+  "version": "1.0.0",
+  "description": "Read and write Airtable bases, Google Sheets, and Excel files",
+  "kind": "esm",
+  "entryPoint": "mod.ts",
+  "runtime": "deno",
+  "author": "CortexPrism",
+  "license": "MIT",
+  "repository": "https://github.com/CortexPrism/cortex-plugin-airtable",
+  "homepage": "",
+  "capabilities": [
+    "tools",
+    "network:fetch",
+    "fs:read",
+    "fs:write"
+  ],
+  "tools": [
+    {
+      "name": "airtable_list_records",
+      "description": "List records from an Airtable table with optional filtering",
+      "params": [
+        {
+          "name": "base_id",
+          "type": "string",
+          "description": "Airtable base ID",
+          "required": true
+        },
+        {
+          "name": "table_name",
+          "type": "string",
+          "description": "Table name or ID",
+          "required": true
+        },
+        {
+          "name": "max_records",
+          "type": "number",
+          "description": "Maximum number of records to return",
+          "required": false,
+          "defaultValue": 100
+        },
+        {
+          "name": "filter_formula",
+          "type": "string",
+          "description": "Airtable filter formula expression",
+          "required": false
+        },
+        {
+          "name": "view",
+          "type": "string",
+          "description": "Name or ID of a specific view",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "airtable_create_record",
+      "description": "Create a new record in an Airtable table",
+      "params": [
+        {
+          "name": "base_id",
+          "type": "string",
+          "description": "Airtable base ID",
+          "required": true
+        },
+        {
+          "name": "table_name",
+          "type": "string",
+          "description": "Table name or ID",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "string",
+          "description": "JSON object of field names to values",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "airtable_update_record",
+      "description": "Update an existing record in an Airtable table",
+      "params": [
+        {
+          "name": "base_id",
+          "type": "string",
+          "description": "Airtable base ID",
+          "required": true
+        },
+        {
+          "name": "table_name",
+          "type": "string",
+          "description": "Table name or ID",
+          "required": true
+        },
+        {
+          "name": "record_id",
+          "type": "string",
+          "description": "Record ID to update",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "string",
+          "description": "JSON object of field names to updated values",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "airtable_list_bases",
+      "description": "List all Airtable bases accessible with the configured API key",
+      "params": []
+    },
+    {
+      "name": "sheets_read",
+      "description": "Read data from a Google Sheet",
+      "params": [
+        {
+          "name": "spreadsheet_id",
+          "type": "string",
+          "description": "Google Sheets spreadsheet ID",
+          "required": true
+        },
+        {
+          "name": "range",
+          "type": "string",
+          "description": "A1 notation range to read",
+          "required": false,
+          "defaultValue": "Sheet1"
+        },
+        {
+          "name": "sheet_name",
+          "type": "string",
+          "description": "Sheet/tab name (overrides range sheet)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "sheets_write",
+      "description": "Write data to a Google Sheet",
+      "params": [
+        {
+          "name": "spreadsheet_id",
+          "type": "string",
+          "description": "Google Sheets spreadsheet ID",
+          "required": true
+        },
+        {
+          "name": "range",
+          "type": "string",
+          "description": "A1 notation range to write to",
+          "required": true
+        },
+        {
+          "name": "values",
+          "type": "string",
+          "description": "JSON 2D array of values to write",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "ui": [
+    {
+      "section": "Airtable",
+      "fields": [
+        {
+          "key": "airtableApiKey",
+          "label": "API Key",
+          "type": "secret",
+          "description": "Your Airtable personal access token",
+          "required": true
+        },
+        {
+          "key": "airtableDefaultBase",
+          "label": "Default Base ID",
+          "type": "text",
+          "description": "Default Airtable base ID"
+        }
+      ]
+    },
+    {
+      "section": "Google Sheets",
+      "fields": [
+        {
+          "key": "sheetsClientEmail",
+          "label": "Client Email",
+          "type": "text",
+          "description": "GCP service account client email"
+        },
+        {
+          "key": "sheetsPrivateKey",
+          "label": "Private Key",
+          "type": "secret",
+          "description": "GCP service account private key (PEM)"
+        }
+      ]
+    }
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "cortex": ">=1.0.0"
+  },
+  "aiDisclosure": {
+    "tools": ["Claude Code (Anthropic)"],
+    "humanReview": true
+  }
+}
