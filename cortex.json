@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-airtable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read and write Airtable bases, Google Sheets, and Excel files",
   "kind": "esm",
   "entryPoint": "mod.ts",

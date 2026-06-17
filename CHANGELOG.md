@@ -1,13 +1,15 @@
 # Changelog
 
-## [Unreleased]
+## [1.0.1] — 2026-06-17
 
 ### Added
+
 - Initial project setup
 
 ## [1.0.0] — 2026-06-15
 
 ### Added
+
 - Initial release of cortex-plugin-airtable
 - `airtable_list_records` — List records with filtering and views
 - `airtable_create_record` — Create records in Airtable bases
