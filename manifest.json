@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-airtable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Read and write Airtable bases, Google Sheets, and Excel files",
   "kind": "esm",
   "entryPoint": "mod.ts",
@@ -8,7 +8,7 @@
   "author": "CortexPrism",
   "license": "MIT",
   "repository": "https://github.com/CortexPrism/cortex-plugin-airtable",
-  "homepage": "",
+  "homepage": "https://github.com/CortexPrism/cortex-plugin-airtable",
   "capabilities": [
     "tools",
     "network:fetch",
@@ -37,7 +37,7 @@
           "type": "number",
           "description": "Maximum number of records to return",
           "required": false,
-          "defaultValue": 100
+          "default": 100
         },
         {
           "name": "filter_formula",
@@ -127,7 +127,7 @@
           "type": "string",
           "description": "A1 notation range to read",
           "required": false,
-          "defaultValue": "Sheet1"
+          "default": "Sheet1"
         },
         {
           "name": "sheet_name",
