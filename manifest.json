@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-airtable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Read and write Airtable bases, Google Sheets, and Excel files",
   "kind": "esm",
   "entryPoint": "mod.ts",
@@ -37,7 +37,7 @@
           "type": "number",
           "description": "Maximum number of records to return",
           "required": false,
-          "default": 100
+          "defaultValue": 100
         },
         {
           "name": "filter_formula",
@@ -127,7 +127,7 @@
           "type": "string",
           "description": "A1 notation range to read",
           "required": false,
-          "default": "Sheet1"
+          "defaultValue": "Sheet1"
         },
         {
           "name": "sheet_name",
@@ -203,7 +203,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "cortex": ">=1.0.0"
+    "cortex": ">=0.51.0"
   },
   "aiDisclosure": {
     "tools": [
